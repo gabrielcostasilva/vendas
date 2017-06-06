@@ -50,8 +50,7 @@
         
         <auth-constraint>
             <role-name>administrativo</role-name>
-        </auth-constraint>
-       
+        </auth-constraint>     
     </security-constraint>
     
     
@@ -65,19 +64,16 @@
         <auth-constraint>
             <role-name>venda</role-name>
         </auth-constraint>
-
     </security-constraint>
     
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Página protegida deposito</web-resource-name>
-            <url-pattern>/faces/estoque/*</url-pattern>
-            
+            <url-pattern>/faces/estoque/*</url-pattern>   
         </web-resource-collection>
         
         <auth-constraint>
             <role-name>deposito</role-name>
         </auth-constraint>
-
     </security-constraint>
 </web-app>
