@@ -21,6 +21,61 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+   
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        
+        <form-login-config>
+            <form-login-page>/faces/seguranca/login.xhtml</form-login-page>
+            <form-error-page>/faces/seguranca/erro.xhtml</form-error-page>
+        </form-login-config>
+      
+    </login-config>
     
+    <security-role>
+        <role-name>venda</role-name>
+    </security-role>
+    <security-role>
+        <role-name>deposito</role-name>
+    </security-role>
+    <security-role>
+        <role-name>administrativo</role-name>
+    </security-role>
     
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Role venda</web-resource-name>
+            <url-pattern>/faces/cliente/*</url-pattern>
+            <url-pattern>/faces/venda/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>venda</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+       <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Role deposito</web-resource-name>
+            <url-pattern>/faces/estoque/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>deposito</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Role financeiro</web-resource-name>
+            <url-pattern>/faces/administrativo/*</url-pattern>
+            <url-pattern>/faces/estoque/*</url-pattern>
+            <url-pattern>/faces/cliente/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>financeiro</role-name>
+        </auth-constraint>
+    </security-constraint>
 </web-app>
