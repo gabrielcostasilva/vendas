@@ -3,25 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="../template.xhtml">
         <ui:define name="principal">
             <h:form>
                 <h1>Página de Gerenciamento de Cliente</h1>
                 <p:panel header="Insere novo cliente">
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="3">
                         <p:outputLabel value="Nome:"></p:outputLabel>
-                        <p:inputText value="#{clienteMB.nome}"></p:inputText>
+                        <p:inputText id="nomeCliente" value="#{clienteMB.nome}" required="true"
+                                     requiredMessage="Nome obrigatório. Minimo: 4 e Máximo: 30">
+                            <f:validateLength minimum="4" maximum="30"></f:validateLength>
+                        </p:inputText>
+                        <h:message for="nomeCliente" style="color:red;"/>
 
                         <p:outputLabel value="Idade:"></p:outputLabel>
-                        <p:inputText value="#{clienteMB.idade}"></p:inputText>
+                        <p:inputText id="idadeCliente" value="#{clienteMB.idade}" required="true"
+                                     requiredMessage="Idade entre 18 e 75 anos">
+                            <f:validateLongRange minimum="18" maximum="75" />
+                        </p:inputText>
+                        <h:message for="idadeCliente" style="color:red;"/>
 
                         <p:outputLabel value="Data Nascimento:"></p:outputLabel>
                         <p:calendar value="#{clienteMB.dataNascimento}"></p:calendar>
+                        <input type="hidden"/>
 
                         <p:outputLabel value="Limite de crédito: "></p:outputLabel>
                         <p:inputText value="#{clienteMB.limite}"></p:inputText>
+                        <input type="hidden"/>
 
                         <p:commandButton value="Criar" ajax="false" action="#{clienteMB.executar()}"></p:commandButton>
                         <p:commandButton value="Cancelar" ajax="false" action="/faces/index"></p:commandButton>

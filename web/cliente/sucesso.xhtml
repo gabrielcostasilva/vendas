@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="../template.xhtml">
         <ui:define name="principal">
@@ -18,10 +19,14 @@
                         <p:outputLabel value="#{clienteMB.idade}"></p:outputLabel>
 
                         <p:outputLabel value="Data Nascimento:"></p:outputLabel>
-                        <p:outputLabel value="#{clienteMB.dataNascimento}"></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.dataNascimento}">
+                            <f:convertDateTime dateStyle="long"></f:convertDateTime>
+                        </p:outputLabel>
 
                         <p:outputLabel value="Limite de crédito: "></p:outputLabel>
-                        <p:outputLabel value="#{clienteMB.limite}"></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.limite}">
+                            <f:convertNumber type="currency" locale="pt_BR" />
+                        </p:outputLabel>
 
                     </h:panelGrid>
                 </p:panel>
