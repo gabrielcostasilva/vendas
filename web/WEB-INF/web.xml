@@ -23,10 +23,10 @@
     </welcome-file-list>
         
         
-<!-- Autenticação -->
+    <!-- Autenticação -->
     <login-config>
-        <auth-method>FORM</auth-method> <!-- BASIC OU FORM, QUANDO FOR FORM VAI SER USADO O FORM-LOGIN-CONFIG -->
-        <realm-name>file</realm-name> <!-- file nao usa banco para autenticar, JDBCRealm usa banco para autenticaçao -->		
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name> 
 
         <form-login-config>
             <form-login-page>/faces/login.xhtml</form-login-page>
@@ -37,38 +37,46 @@
     
     <!-- Autorização -->
     <security-role>
-        <role-name>venda</role-name> <!-- grupos cadastrados -->
-	<role-name>deposito</role-name> <!-- grupos cadastrados -->
-        <role-name>administrativo</role-name> <!-- grupos cadastrados -->
-        
+        <role-name>venda</role-name> 
+        <role-name>deposito</role-name>
+        <role-name>administrativo</role-name> 
     </security-role>
     
     
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Página protegida</web-resource-name> <!-- é um nome qualquer so para identificar o bloqueio -->
-            <url-pattern>/faces/gerenciaCliente.xhtml</url-pattern> <!-- pagina que vai ser bloqueada -->
-            <url-pattern>/faces/catalogo.xhtml</url-pattern> <!-- pagina que vai ser bloqueada -->
-            <url-pattern>/faces/gerenciaVenda.xhtml</url-pattern> <!-- pagina que vai ser bloqueada -->
-       </web-resource-collection>
-        
-        <auth-constraint>
-            <role-name>venda</role-name> <!-- grupo do usuario -->
-        </auth-constraint>
-        
-
-    </security-constraint>
-	
-	<security-constraint>
-        <web-resource-collection>
             <web-resource-name>Página protegida</web-resource-name>
-            <url-pattern>/faces/superprotegidas/*</url-pattern>
+            <url-pattern>/faces/gerenciaCliente.xhtml</url-pattern>
+            <url-pattern>/faces/gerenciaVenda.xhtml</url-pattern>
         </web-resource-collection>
         
         <auth-constraint>
-            <role-name>teste</role-name>
+            <role-name>venda</role-name>
         </auth-constraint>
-
+    </security-constraint>
+	
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Página protegida</web-resource-name>
+            <url-pattern>/faces/gerenciaEstoque.xhtml</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>deposito</role-name> 
+        </auth-constraint>
+    </security-constraint>
+    
+        <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Página protegida</web-resource-name>
+            <url-pattern>/faces/gerenciaFinanceiro.xhtml</url-pattern>
+            <url-pattern>/faces/gerenciaEstoque.xhtml</url-pattern>
+            <url-pattern>/faces/gerenciaCliente.xhtml</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>administrativo</role-name> 
+        </auth-constraint>
     </security-constraint>
         
 </web-app>

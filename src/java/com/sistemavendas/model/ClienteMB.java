@@ -20,7 +20,6 @@ public class ClienteMB {
     }
     
     
-
     public String getNome() {
         return nome;
     }
