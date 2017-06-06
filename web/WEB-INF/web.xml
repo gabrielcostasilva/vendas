@@ -46,7 +46,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Página protegida</web-resource-name>
-            <url-pattern>/faces/cliente/*</url-pattern>
+            <!--<url-pattern>/faces/cliente/*</url-pattern>-->
             <url-pattern>/faces/venda/gerenciaVenda.xhtml</url-pattern>
         </web-resource-collection>
         
@@ -71,7 +71,7 @@
             <web-resource-name>Página protegida</web-resource-name>
             <url-pattern>/faces/financeiro/*</url-pattern>
             <url-pattern>/faces/estoque/*</url-pattern>
-            <url-pattern>/faces/cliente/*</url-pattern>
+           <!-- <url-pattern>/faces/cliente/*</url-pattern> -->
         </web-resource-collection>
         
         <auth-constraint>
