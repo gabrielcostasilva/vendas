@@ -22,7 +22,7 @@
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
     
-      <!-- Autenticação -->
+    <!-- Autenticação -->
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>
@@ -33,7 +33,7 @@
         </form-login-config>
     </login-config>
     
-     <security-role>
+    <security-role>
         <role-name>venda</role-name>
     </security-role>
     <security-role>
@@ -46,7 +46,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Página protegida</web-resource-name>
-            <!--<url-pattern>/faces/cliente/*</url-pattern>-->
+            <url-pattern>/faces/cliente/*</url-pattern>
             <url-pattern>/faces/venda/gerenciaVenda.xhtml</url-pattern>
         </web-resource-collection>
         
@@ -55,7 +55,7 @@
         </auth-constraint>
     </security-constraint>
     
-     <security-constraint>
+    <security-constraint>
         <web-resource-collection>
             <web-resource-name>Página protegida</web-resource-name>
             <url-pattern>/faces/estoque/*</url-pattern>
@@ -71,11 +71,13 @@
             <web-resource-name>Página protegida</web-resource-name>
             <url-pattern>/faces/financeiro/*</url-pattern>
             <url-pattern>/faces/estoque/*</url-pattern>
-           <!-- <url-pattern>/faces/cliente/*</url-pattern> -->
+            <url-pattern>/faces/cliente/*</url-pattern> 
         </web-resource-collection>
         
         <auth-constraint>
             <role-name>administrativo</role-name>
         </auth-constraint>
     </security-constraint>
+   
+   
 </web-app>
