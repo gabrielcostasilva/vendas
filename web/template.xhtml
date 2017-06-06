@@ -11,13 +11,13 @@
         <p:layout fullPage="true">
 
             <p:layoutUnit position="west" size="200" header="Left" resizable="true" collapsible="true">
-                <ui:include src="links.xhtml"></ui:include>
+                <ui:insert name="cliente"></ui:insert>
+                <ui:insert name="estoque"></ui:insert>
+                <ui:insert name="financeiro"></ui:insert>
+                <ui:insert name="index"></ui:insert>
             </p:layoutUnit>
 
-            <p:layoutUnit position="center">
-                <ui:insert name="principal"></ui:insert>
-                <ui:insert name="principal2"></ui:insert>
-                
+            <p:layoutUnit position="center">               
             </p:layoutUnit>
 
         </p:layout>
