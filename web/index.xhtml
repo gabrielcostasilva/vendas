@@ -4,10 +4,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Sistema Vendas teste</title>
+        <title>Sistema Vendas</title>
     </h:head>
     <h:body>
         <h1>Sistema de Vendas</h1>
+        <h:form>
+            <p:button outcome="gerenciaCliente" value="Gerenciamento de Clientes"/>
+            <br/>
+            <p:button outcome="gerenciaEstoque" value="Gerenciamento de Estoque"/>
+            <br/>
+            <p:button outcome="gerenciaFinanceiro"  value="Gerenciamento Financeiro"/>
+            <br/>
+            <p:button outcome="gerenciaVenda" value="Gerenciamento de Vendas"/>
+            <br/>
+            <p:button outcome="catalogo" value="Catálogo de Produtos"/>
+            <br/>
+        </h:form>
     </h:body>
 </html>
 
