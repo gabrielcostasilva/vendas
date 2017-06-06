@@ -35,36 +35,48 @@
     
     <!-- Autorização -->
     <security-role>
-        <role-name>padrao</role-name>
-        <role-name>admin</role-name>
+        <role-name>administrativo</role-name>
+        <role-name>venda</role-name>
+        <role-name>deposito</role-name>
     </security-role>
     
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Página protegida</web-resource-name>
-            <url-pattern>/faces/protegidas/*</url-pattern>
+            <web-resource-name>Página protegida administrativo</web-resource-name>
+            <url-pattern>/faces/financeiro/*</url-pattern>
+            <url-pattern>/faces/estoque/*</url-pattern>
+            <url-pattern>/faces/cliente/*</url-pattern>
         </web-resource-collection>
         
         <auth-constraint>
-            <role-name>padrao</role-name>
+            <role-name>administrativo</role-name>
         </auth-constraint>
-        
-        <!-- 
-        <user-data-constraint>
-            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>
-        -->
+       
     </security-constraint>
     
     
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Página protegida</web-resource-name>
-            <url-pattern>/faces/superprotegidas/*</url-pattern>
+            <web-resource-name>Página protegida venda</web-resource-name>
+            <url-pattern>/faces/venda/gerenciavenda.xhtml</url-pattern>
+            <url-pattern>/faces/cliente/*</url-pattern>
         </web-resource-collection>
         
         <auth-constraint>
-            <role-name>admin</role-name>
+            <role-name>venda</role-name>
+        </auth-constraint>
+
+    </security-constraint>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Página protegida deposito</web-resource-name>
+            <url-pattern>/faces/estoque/*</url-pattern>
+            
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>deposito</role-name>
         </auth-constraint>
 
     </security-constraint>
