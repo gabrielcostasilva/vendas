@@ -47,7 +47,7 @@
         <web-resource-collection>
             <web-resource-name>Página protegida</web-resource-name>
             <url-pattern>/faces/cliente/*</url-pattern>
-            <url-pattern>/faces/venda/*</url-pattern>
+            <url-pattern>/faces/venda/gerenciaVenda.xhtml</url-pattern>
         </web-resource-collection>
         
         <auth-constraint>
