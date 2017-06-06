@@ -3,17 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:composition template="../template.xhtml">
         <ui:define name="gerenciaCliente">
             <h:form>
                 <p:panel header="Insere novo cliente">
                     <h:panelGrid columns="2">
                         <p:outputLabel value="Nome:"></p:outputLabel>
-                        <p:inputText value="#{clienteMB.nome}"></p:inputText>
+                        <p:inputText value="#{clienteMB.nome}" required="True" requiredMessage="Campo Obrigatório!" id="nome">
+                            <f:validateLength minimum="4" maximum="30"></f:validateLength>
+                        </p:inputText>
+                        <h:message for="nome" style="color:red"></h:message>
 
                         <p:outputLabel value="Idade:"></p:outputLabel>
-                        <p:inputText value="#{clienteMB.idade}"></p:inputText>
+                        <p:inputText value="#{clienteMB.idade}" requiredMessage="intervalo Invalido!">
+                            <f:validateDoubleRange minimum="18" maximum="75" id="idade"></f:validateDoubleRange>
+                        </p:inputText>
+                        <h:message for="idade" style="color:red"></h:message>
 
                         <p:outputLabel value="Data Nascimento:"></p:outputLabel>
                         <p:calendar value="#{clienteMB.dataNascimento}"></p:calendar>
