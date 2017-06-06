@@ -19,10 +19,16 @@
                         <p:outputLabel value="Idade:"></p:outputLabel>
                         <p:outputLabel value="#{clienteMB.idade}"></p:outputLabel>
 
-                        <p:outputLabel value="Data Nascimento:"></p:outputLabel>
+                        <p:outputLabel value="Data Nascimento:">
+                            <f:convertDateTime timeStyle="long" locale="pt_BR"></f:convertDateTime>
+                        </p:outputLabel>
+                        
                         <p:outputLabel value="#{clienteMB.dataNascimento}"></p:outputLabel>
 
-                        <p:outputLabel value="Limite de crédito: "></p:outputLabel>
+                        <p:outputLabel value="Limite de crédito: ">
+                            <f:convertNumber type="currency" locale="pt_BR"></f:convertNumber>
+                        </p:outputLabel>
+                        
                         <p:outputLabel value="#{clienteMB.limite}"></p:outputLabel>
 
                     </h:panelGrid>
