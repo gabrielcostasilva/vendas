@@ -34,9 +34,11 @@
     <security-role>
         <role-name>venda</role-name>
     </security-role>
+    
     <security-role>
         <role-name>deposito</role-name>
     </security-role>
+    
     <security-role>
         <role-name>administrativo</role-name>
     </security-role>
