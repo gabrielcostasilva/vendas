@@ -9,15 +9,15 @@
     <h:body>
         <h1>Sistema de Vendas</h1>
         <h:form>
-            <h:commandLink action="cliente/gerenciaCliente" value="Gerenciamento de Clientes"/>
+            <p:button outcome="cliente/gerenciaCliente" value="Gerenciamento de Clientes"/>
             <br/>
-            <h:commandLink action="estoque/gerenciaEstoque" value="Gerenciamento de Estoque"/>
+            <p:button outcome="estoque/gerenciaEstoque" value="Gerenciamento de Estoque"/>
             <br/>
-            <p:button outcome="gerenciaFinanceiro"  value="Gerenciamento Financeiro"/>
+            <p:button outcome="financeiro/gerenciaFinanceiro"  value="Gerenciamento Financeiro"/>
             <br/>
-            <p:button outcome="gerenciaVenda" value="Gerenciamento de Vendas"/>
+            <p:button outcome="venda/gerenciaVenda" value="Gerenciamento de Vendas"/>
             <br/>
-            <p:button outcome="catalogo" value="Catálogo de Produtos"/>
+            <p:button outcome="venda/catalogo" value="Catálogo de Produtos"/>
             <br/>
         </h:form>
     </h:body>

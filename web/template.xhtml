@@ -14,18 +14,18 @@
                           size="200" 
                           header="Opções" 
                           resizable="true" 
-                          collapsible="true">
+                          collapsible="true"> 
                 <h:form>
-                    <h:commandLink action="gerenciaCliente" value="Gerenciamento de Clientes"/>
-                    <br/>
-                    <h:commandLink action="gerenciaEstoque" value="Gerenciamento de Estoque"/>
-                    <br/>
-                    <h:commandLink action="gerenciaFinanceiro"  value="Gerenciamento Financeiro"/>
-                    <br/>
-                    <h:commandLink action="gerenciaVenda" value="Gerenciamento de Vendas"/>
-                    <br/>
-                    <h:commandLink action="catalogo" value="Catálogo de Produtos"/>
-                    <br/>
+                    <p:button outcome="/cliente/gerenciaCliente" value="Gerenciamento de Clientes"/>
+                    <br/><br/>
+                    <p:button outcome="/estoque/gerenciaEstoque" value="Gerenciamento de Estoque"/>
+                    <br/><br/>
+                    <p:button outcome="/financeiro/gerenciaFinanceiro"  value="Gerenciamento Financeiro"/>
+                    <br/><br/>
+                    <p:button outcome="/venda/gerenciaVenda" value="Gerenciamento de Vendas"/>
+                    <br/><br/>
+                    <p:button outcome="/venda/catalogo" value="Catálogo de Produtos"/>
+                    <br/><br/>
                 </h:form>
             </p:layoutUnit>
 

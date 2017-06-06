@@ -20,7 +20,7 @@
 
                         <p:outputLabel value="Data Nascimento:"></p:outputLabel>
                         <p:outputLabel value="#{clienteMB.dataNascimento}">
-                            <f:convertDateTime dateStyle="long"></f:convertDateTime>
+                            <f:convertDateTime type="both" dateStyle="full" timeStyle="long"></f:convertDateTime>
                         </p:outputLabel>
 
                         <p:outputLabel value="Limite de crédito: "></p:outputLabel>
