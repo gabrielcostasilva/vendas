@@ -21,4 +21,74 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <!-- AUTENTICAÇÃO -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        
+        <form-login-config>
+            <form-login-page>/faces/seguranca/login.xhtml</form-login-page>
+            <form-error-page>/faces/seguranca/erro.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <!-- AUTORIZAÇÃO -->
+    <security-role>
+        <role-name>venda</role-name>
+    </security-role>
+    <security-role>
+        <role-name>deposito</role-name>
+    </security-role>
+    <security-role>
+        <role-name>administrativo</role-name>
+    </security-role>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name></web-resource-name>
+            <url-pattern>/faces/cliente/*</url-pattern>
+            <url-pattern>/faces/venda/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>venda</role-name>
+        </auth-constraint>
+        
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name></web-resource-name>
+            <url-pattern>/faces/estoque/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>deposito</role-name>
+        </auth-constraint>
+        
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name></web-resource-name>
+            <url-pattern>/faces/estoque/*</url-pattern>
+            <url-pattern>/faces/cliente/*</url-pattern>
+        </web-resource-collection>
+        
+        <auth-constraint>
+            <role-name>administrativo</role-name>
+        </auth-constraint>
+        
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
 </web-app>
