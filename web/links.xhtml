@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     
         <h:form>
-            <h:commandLink value="Gerenciar Cliente" action="cliente/gerenciaCliente.xhtml"></h:commandLink><br></br>
-            <h:commandLink value="Gerenciar Estoque"  action="estoque/gerenciaEstoque.xhtml"></h:commandLink><br></br>   
-            <h:commandLink value="Gerenciar Financeiro" action="financeiro/gerenciaFinanceiro.xhtml"></h:commandLink><br></br>
-            <h:commandLink value="Catálogo Produtos" action="venda/catalogo.xhtml"></h:commandLink><br></br>
-            <h:commandLink value="Gerenciar Venda" action="venda/gerenciaVenda.xhtml"></h:commandLink><br></br>
+            <p:link value="Gerencia Cliente" outcome="/cliente/gerenciaCliente.xhtml"></p:link><br></br>
+            <p:link value="Gerencia Estoque" outcome="/estoque/gerenciaEstoque.xhtml"></p:link><br></br>
+            <p:link value="Gerenciar Financeiro" outcome="/financeiro/gerenciaFinanceiro.xhtml"></p:link><br></br>
+            <p:link value="Catálogo Produtos" outcome="/venda/catalogo.xhtml"></p:link><br></br>
+            <p:link value="Gerenciar Venda" outcome="/venda/gerenciaVenda.xhtml"></p:link><br></br>
         </h:form>
 </html>
 

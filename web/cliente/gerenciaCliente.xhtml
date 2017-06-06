@@ -17,8 +17,8 @@
                         <h:message for="nome" style="color:red"></h:message>
 
                         <p:outputLabel value="Idade:"></p:outputLabel>
-                        <p:inputText value="#{clienteMB.idade}" requiredMessage="intervalo Invalido!">
-                            <f:validateDoubleRange minimum="18" maximum="75" id="idade"></f:validateDoubleRange>
+                        <p:inputText value="#{clienteMB.idade}" required="True" requiredMessage="intervalo Invalido!" id="idade">
+                            <f:validateDoubleRange minimum="18" maximum="75"></f:validateDoubleRange>
                         </p:inputText>
                         <h:message for="idade" style="color:red"></h:message>
 

@@ -2,32 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Sucesso</title>
-    </h:head>
-    <h:body>
-        <h1>Cliente abaixo foi inserido com sucesso!</h1>
-        
-        <h:form>
-            <p:panel header="Novo cliente">
-                <h:panelGrid columns="2">
-                    <p:outputLabel value="Nome:"></p:outputLabel>
-                    <p:outputLabel value="#{clienteMB.nome}"></p:outputLabel>
-                    
-                    <p:outputLabel value="Idade:"></p:outputLabel>
-                    <p:outputLabel value="#{clienteMB.idade}"></p:outputLabel>
-                    
-                    <p:outputLabel value="Data Nascimento:"></p:outputLabel>
-                    <p:outputLabel value="#{clienteMB.dataNascimento}"></p:outputLabel>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="../template.xhtml">
+        <ui:define name="sucesso">
+            <h1>Cliente abaixo foi inserido com sucesso!</h1>
+            <h:form>
+                <p:panel header="Novo cliente">
+                    <h:panelGrid columns="2">
+                        <p:outputLabel value="Nome:"></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.nome}"></p:outputLabel>
 
-                    <p:outputLabel value="Limite de crédito: "></p:outputLabel>
-                    <p:outputLabel value="#{clienteMB.limite}"></p:outputLabel>
-                    
-                </h:panelGrid>
-            </p:panel>
-        </h:form>
-        
-    </h:body>
+                        <p:outputLabel value="Idade:"></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.idade}"></p:outputLabel>
+
+                        <p:outputLabel value="Data Nascimento:"></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.dataNascimento}">
+                            <f:convertDateTime dateStyle="long" locale="pt_BR"></f:convertDateTime>
+                        </p:outputLabel>
+
+                        <p:outputLabel value="Limite de crédito: "></p:outputLabel>
+                        <p:outputLabel value="#{clienteMB.limite}">
+                            <f:convertNumber type="currency" locale="pt_BR"></f:convertNumber>
+                        </p:outputLabel>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define>
+     </ui:composition> 
 </html>
 
