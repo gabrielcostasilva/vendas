@@ -21,5 +21,16 @@
             <from-outcome>gerenciaFinanceiro</from-outcome>
             <to-view-id>/financeiro/gerenciaFinanceiro.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>catalogo</from-outcome>
+            <to-view-id>/catalogo.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/seguranca/erro.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>
