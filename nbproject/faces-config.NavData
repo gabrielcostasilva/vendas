@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="modelo.xhtml" x="140" y="457" zoom="true"/>
+        <Node id="index.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="financeiro/gerenciaFinanceiro.xhtml" x="335" y="310" zoom="true"/>
+        <Node id="seguranca/erro.xhtml" x="113" y="115" zoom="true"/>
+        <Node id="cliente/gerenciaCliente.xhtml" x="53" y="232" zoom="true"/>
+        <Node id="faces/venda/catalogo.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="estoque/gerenciaEstoque.xhtml" x="404" y="519" zoom="true"/>
+        <Node id="venda/catalogo.xhtml" x="522" y="430" zoom="true"/>
+        <Node id="faces/financeiro/gerenciaFinanceiro.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="faces/venda/gerenciaVenda.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="central.xhtml" x="1029" y="290" zoom="true"/>
+        <Node id="venda/gerenciaVenda.xhtml" x="50" y="563" zoom="true"/>
+        <Node id="cliente/sucesso.xhtml" x="405" y="74" zoom="true"/>
+        <Node id="faces/estoque/gerenciaEstoque.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="seguranca/login.xhtml" x="111" y="72" zoom="true"/>
+        <Node id="faces/cliente/gerenciaCliente.xhtml" x="650" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

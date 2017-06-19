@@ -5,43 +5,45 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
-    <h:head>
-        <title>Cliente</title>
-    </h:head>
-    <h:body>
-        <h1>Página de Gerenciamento de Cliente</h1>
 
-        <h:form>
-            <p:panel header="Insere novo cliente">
-                <h:panelGrid columns="3">
-                    <p:outputLabel value="Nome:"></p:outputLabel>
-                    <p:inputText id="nome" value="#{clienteMB.nome}" required="true">
-                        <f:validateLength minimum="4" maximum="30"></f:validateLength>
-                    </p:inputText>
-                    <p:message for="nome"></p:message>
+    <ui:composition template="/modelo.xhtml">
 
-                    <p:outputLabel value="Idade:"></p:outputLabel>
-                    <p:inputText id="idade" value="#{clienteMB.idade}" >
-                        <f:validateLongRange minimum="18" maximum="75"></f:validateLongRange>
-                    </p:inputText>
-                    <p:message for="idade"></p:message>
+        <ui:define name="central">        
 
-                    <p:outputLabel value="Data Nascimento:"></p:outputLabel>
-                    <p:calendar id="calendar" value="#{clienteMB.dataNascimento}"></p:calendar>
-                    <p:message for="calendar"></p:message>
+            <h1>Página de Gerenciamento de Cliente</h1>
 
-                    <p:outputLabel value="Limite de crédito: "></p:outputLabel>
-                    <p:inputText id="credito" value="#{clienteMB.limite}"></p:inputText>
-                    <p:message for="credito"></p:message>
+            <h:form>
+                <p:panel header="Insere novo cliente">
+                    <h:panelGrid columns="3">
+                        <p:outputLabel value="Nome:"></p:outputLabel>
+                        <p:inputText id="nome" value="#{clienteMB.nome}" required="true">
+                            <f:validateLength minimum="4" maximum="30"></f:validateLength>
+                        </p:inputText>
+                        <p:message for="nome"></p:message>
 
-                    <p:commandButton value="Criar" ajax="false" action="#{clienteMB.executar()}"></p:commandButton>
-                    <p:commandButton value="Cancelar" ajax="false" action="/faces/index"></p:commandButton>
-                </h:panelGrid>
-            </p:panel>
-        </h:form>
+                        <p:outputLabel value="Idade:"></p:outputLabel>
+                        <p:inputText id="idade" value="#{clienteMB.idade}" >
+                            <f:validateLongRange minimum="18" maximum="75"></f:validateLongRange>
+                        </p:inputText>
+                        <p:message for="idade"></p:message>
 
-    </h:body>
+                        <p:outputLabel value="Data Nascimento:"></p:outputLabel>
+                        <p:calendar id="calendar" value="#{clienteMB.dataNascimento}"></p:calendar>
+                        <p:message for="calendar"></p:message>
+
+                        <p:outputLabel value="Limite de crédito: "></p:outputLabel>
+                        <p:inputText id="credito" value="#{clienteMB.limite}"></p:inputText>
+                        <p:message for="credito"></p:message>
+
+                        <p:commandButton value="Criar" ajax="false" action="#{clienteMB.executar()}"></p:commandButton>
+                        <p:commandButton value="Cancelar" ajax="false" action="/faces/index"></p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+            
+        </ui:define>
+
+    </ui:composition>
 
 </html>
 

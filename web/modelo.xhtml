@@ -5,17 +5,43 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-    <p:layout style="min-width:400px;min-height:200px;">
-        <p:layoutUnit position="west" resizable="true" size="100" minSize="40" maxSize="200">
-            <h:form>
-                <p>something</p>
+    <h:head>
+        <title>Sistema Vendas</title>
+    </h:head>
 
-            </h:form>
-        </p:layoutUnit>
+    <h:body>
 
-        <p:layoutUnit position="center">
-            <ui:insert name="central"></ui:insert>
-        </p:layoutUnit>
-    </p:layout>
+        <p:layout style="min-width:600px;min-height:200px;">
 
+            <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="300">
+                <h:form>
+                    <p>
+                        <p:button outcome="/faces/cliente/gerenciaCliente" value="Página Cliente"></p:button>
+                    </p>
+                    
+                    <p>
+                        <p:button outcome="/faces/estoque/gerenciaEstoque" value="Página Estoque"></p:button>
+                    </p>
+                    
+                    <p>
+                        <p:button outcome="/faces/financeiro/gerenciaFinanceiro" value="Página Financeiro"></p:button>
+                    </p>
+                    
+                    <p>
+                        <p:button outcome="/faces/venda/catalogo" value="Página Catálogo"></p:button>
+                    </p>
+                    
+                    <p>
+                        <p:button outcome="/faces/venda/gerenciaVenda" value="Página Venda"></p:button>
+                    </p>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="central"></ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
 </html>
